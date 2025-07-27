@@ -1,5 +1,7 @@
 import { auth, onAuthStateChanged, query, where, serverTimestamp, updateDoc, reff, onValue, dbd, doc, getDoc, db, collection, getDocs, signOut } from "./config.js";
 
+let currentTransactionData = null;
+
 var uid = null;
 onAuthStateChanged(auth, async (user) => {
   if (user) {
@@ -160,6 +162,7 @@ async function showTransactionDialog(transactionId) {
 
     if (docSnap.exists()) {
       const data = docSnap.data();
+      currentTransactionData = { id: transactionId, data };
       dialog.innerHTML = `
         <h3>Transaction: ${transactionId}</h3>
         <div>
@@ -180,6 +183,7 @@ async function showTransactionDialog(transactionId) {
             ${data.addressData.country || ""}
           ` : "N/A"}<br>
         </div>
+        <button id="generate-pdf-btn">Generate Thank You Note</button>
         <button id="close-dialog-btn">Close</button>
       `;
     } else {
@@ -191,6 +195,10 @@ async function showTransactionDialog(transactionId) {
   }
 
   dialog.querySelector("#close-dialog-btn").onclick = () => dialog.close();
+  const pdfBtn = dialog.querySelector("#generate-pdf-btn");
+  if (pdfBtn) {
+    pdfBtn.onclick = generateThankYouNote;
+  }
 }
 
 // Update transaction status in Firebase with timestamps
@@ -261,5 +269,26 @@ function showToast(message, type = "success") {
   setTimeout(() => {
     toast.remove();
   }, 3000);
+}
+
+async function generateThankYouNote() {
+  if (!currentTransactionData) return;
+  try {
+    const existingPdfBytes = await fetch('./pdf.pdf').then(res => res.arrayBuffer());
+    const pdfDoc = await PDFLib.PDFDocument.load(existingPdfBytes);
+    const page = pdfDoc.getPages()[0];
+    const { height } = page.getSize();
+    const text = `Thank you, ${currentTransactionData.data.akshrcardData?.cardName || ''}!`;
+    page.drawText(text, { x: 50, y: height - 50, size: 12 });
+    const pdfBytes = await pdfDoc.save();
+    const blob = new Blob([pdfBytes], { type: 'application/pdf' });
+    const link = document.createElement('a');
+    link.href = URL.createObjectURL(blob);
+    link.download = 'thank_you_note.pdf';
+    link.click();
+  } catch (e) {
+    console.error('Error generating pdf', e);
+    showToast('Failed to generate PDF', 'error');
+  }
 }
 
