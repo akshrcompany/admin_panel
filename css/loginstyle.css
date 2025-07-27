@@ -1,0 +1,161 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400..800&display=swap');
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background: url('https://firebasestorage.googleapis.com/v0/b/main-control-panel.firebasestorage.app/o/website%2Fimages%2Flogin_background_desktop.webp?alt=media') no-repeat center center fixed;
+  background-size: cover;
+  justify-content: center;
+  font-family: Syne, sans-serif;
+  font-variant-numeric: lining-nums tabular-nums;
+
+}
+
+
+.login_background {
+  height: 100vh;
+}
+
+.login-box {
+  margin: 15vh auto;
+
+  max-width: 500px;
+  width: 85vw;
+  padding: 3vw;
+  color: var(--Text-Primary);
+  background-color: var(--Surface-Neutral-Default);
+  box-sizing: border-box;
+  border-radius: 1.5rem;
+  text-align: center;
+  position: relative;
+
+}
+
+.login-box img {
+  height: 4vh;
+  margin-bottom: 1vh;
+}
+
+.login-box h2 {
+  margin-bottom: 30px;
+  color: var(--Text-Primary);
+}
+
+.login-box h3 {
+  font-weight: 600;
+}
+
+.user-box {
+  margin-bottom: 30px;
+  text-align: left;
+  flex-direction: column;
+
+}
+
+.user-box a {
+  font-size: 0.75rem;
+  color: var(--Text-Primary, #121A21);
+  text-decoration: underline;
+  float: right;
+  margin-top: 0.5vh;
+  margin-bottom: 4vh;
+}
+
+.user-box input {
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid #cc0041;
+  outline: none;
+  background: transparent;
+  font-family: Syne;
+  font-variant-numeric: lining-nums tabular-nums;
+  border-radius: 4px;
+  border: 1px solid var(--Stroke-Default, #D2D9E1);
+  background: var(--Surface-Neutral-Default, #FFF);
+  padding: 12px 0 12px 12px;
+  /* space for the icon */
+  box-sizing: border-box;
+  font-size: 1 rem;
+  font-weight: 400;
+  line-height: 150%;
+
+  margin-top: 0.5vh;
+
+
+
+}
+
+.user-box label {
+  text-align: left;
+  width: 100%;
+  pointer-events: none;
+  font-size: small;
+  color: var(--Text-Primary, #121A21);
+font-size: 0.75rem;
+  transition: 0.5s;
+  
+  
+}
+
+
+
+button {
+  padding: 1rem;
+  background-color: var(--Surface-Neutral-Black, #121A21);
+  font-family: Syne;
+  color: var(--Text-White);
+  text-decoration: none;
+  overflow: hidden;
+  transition: 0.5s;
+  margin: 1vh 0;
+  border-radius: 8px;
+  cursor: pointer;
+  width: 100%;
+  font-weight: 600;
+}
+
+button:hover {
+  background: var(--Black-Hover);
+  
+}
+
+.google-button {
+  background-color: transparent;
+  color: var(--Text-Primary);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 500;
+  gap: 0.5vw;
+  border: 1px solid var(--Stroke-Default, #D2D9E1);
+  background: var(--Surface-Neutral-Default, #FFF);
+}
+
+#toggleForm {
+  background: none;
+  color: var(--Text-Secondary);
+  text-decoration-line: underline;
+
+  border: none;
+  cursor: pointer;
+  display: block;
+  margin-bottom: 3vh;
+}
+
+hr {
+  background: var(--Stroke-Default, #D2D9E1);
+}
+
+@media screen and (max-width: 768px) {
+  .login-box {
+
+    margin: 10vh auto;
+    padding: 6vh 7vw;
+  }
+
+
+}

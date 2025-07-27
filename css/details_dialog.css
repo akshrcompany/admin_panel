@@ -1,0 +1,59 @@
+/* details_dialog.css */
+
+#transaction-dialog {
+    min-width: 350px;
+    max-width: 95vw;
+    padding: 2rem 2.5rem;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.25), 0 1.5px 6px rgba(0,0,0,0.10);
+    background: #fff;
+    color: #222;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    font-size: 1rem;
+    z-index: 1000;
+}
+
+#transaction-dialog h3 {
+    margin-top: 0;
+    margin-bottom: 1rem;
+    font-size: 1.25rem;
+    color: #2d5be3;
+    font-weight: 600;
+}
+
+#transaction-dialog div {
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+}
+
+#transaction-dialog strong {
+    color: #444;
+}
+
+#transaction-dialog button#close-dialog-btn {
+    display: inline-block;
+    padding: 0.5rem 1.2rem;
+    background: #2d5be3;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.18s;
+}
+
+#transaction-dialog button#close-dialog-btn:hover {
+    background: #1741a6;
+}
+
+@media (max-width: 500px) {
+    #transaction-dialog {
+        min-width: 0;
+        width: 95vw;
+        padding: 1rem 0.5rem;
+    }
+    #transaction-dialog h3 {
+        font-size: 1.05rem;
+    }
+}

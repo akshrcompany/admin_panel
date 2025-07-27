@@ -1,0 +1,172 @@
+.heading {
+  margin-bottom: 5vh;
+  font-size: 4vh;
+  line-height: 6vh;
+  margin-left: 3rem;
+}
+
+.main-content-home {
+  flex: 1;
+
+
+
+}
+
+.Cardcontainer {
+  max-height: 100vh;
+  overflow-y: auto;
+  overflow-x: hidden;
+
+}
+
+
+.card-title {
+  display: flex;
+  align-items: center;
+  font-size: 24px;
+  font-family: Syne;
+  font-weight: 600;
+  width: 97%;
+  margin-bottom: 20px;
+}
+
+.card-title::after {
+  content: "";
+  flex: 1;
+  height: 2px;
+  background-color: #CFCFCF;
+  margin-left: 10px;
+}
+
+.hidefordesktop {
+  display: none;
+}
+
+.section {
+  width: 80%;
+  padding-left: 2vw;
+  padding-top: 2vw;
+
+}
+
+/* Transaction List */
+.transaction-list {}
+
+.transaction-list .holder {}
+
+.transaction_item {
+  display: flex;
+  border: 1px solid var(--Stroke-Default, #D2D9E1);
+  margin-bottom: 24px;
+  border-radius: 8px;
+  background: #fff;
+}
+
+.transaction_details {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding-left: 5vw;
+  gap: 5vw 5vw;
+  margin: auto;
+  font-size: larger;
+  height: 100%;
+  color: var(--Text-Secondary, #415467);
+  font-variant-numeric: lining-nums proportional-nums;
+  font-family: Syne;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 120%;
+  /* 16.8px */
+}
+
+.transaction-list .card_section {
+  width: 30%;
+}
+
+.transaction-list strong {
+  color: var(--Text-Primary, #121A21);
+  font-variant-numeric: lining-nums proportional-nums;
+  font-family: Syne;
+  font-style: normal;
+  font-weight: 500;
+
+  line-height: 120%;
+  /* 24px */
+}
+
+.view_details {
+
+  color: black;
+  right: 10%;
+  margin: auto;
+  border-radius: 30px;
+  border: 1px solid black;
+  padding: 18px 22px;
+  font-size: 1.5rem;
+  cursor: pointer;
+  z-index: 1000;
+  transition: background-color 0.2s;
+}
+
+.view_details:hover {
+  background-color: #222;
+  color: white;
+}
+
+/* CSS for Mobile */
+@media (max-width: 768px) {
+  .section {
+    width: 100%;
+    padding-left: 0;
+    padding-top: 2vh;
+  }
+  .home {
+    margin: 1vh auto;
+    width: 90%;
+  }
+
+  .main-content-home {
+    padding-left: 0;
+  }
+
+  .container {
+    width: 80vw;
+    margin: 2vh auto;
+  }
+
+  .hidefordesktop {
+    display: block;
+  }
+
+  .Cardcontainer {
+    margin: 0 auto;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 0;
+
+  }
+.transaction_item{
+  margin: auto;
+}
+  .transaction-list .transaction_item {
+    display: block;
+    width: 80vw;
+    
+  }
+  .transaction_details{
+    margin-top: 5vh;
+    margin-bottom: 2vh;
+  }
+
+  .transaction-list .card_section {
+    width: 100%;
+  }
+
+.view_details{
+  position: relative;
+  left: 80%;
+  top: 1.5vh;
+  background-color: black;
+  color: white;
+  
+}
+}

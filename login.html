@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login/SignUp</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link rel="stylesheet" href="https://akshr.in/css/footer.css">
+  <link rel="stylesheet" href="https://akshr.in/css/Colors.css">
+    <link rel="stylesheet" href="https://akshr.in/css/components.css">
+
+  <link rel="stylesheet" href="https://akshr.in/css/loginstyle.css">
+</head>
+
+<body>
+  <div class="login_background">
+    <div id="authForm" class="login-box">
+      <img
+        src="https://firebasestorage.googleapis.com/v0/b/main-control-panel.firebasestorage.app/o/website%2Flogo%2FAkshr%20Logo-12%201.png?alt=media"
+        alt="Akshr Logo">
+      <h3>Namaste Ji :)</h3>
+      <div id="formContent">
+        <!-- <a id="toggleForm">Don't Have an Account? </a> -->
+        <form id="loginForm">
+          <div class="user-box">
+            <label>Email</label>
+            <input type="email" placeholder="Enter your Email" id="email" name="Email" required>
+          </div>
+          <div class="user-box "style="margin-top: 1vh;">
+            <!-- <label >Password</label>
+            <div class="password-wrapper">
+              <input type="password" id="password" name="Password" required>
+              <span class="toggle-password" onclick="togglePassword()"><svg xmlns="http://www.w3.org/2000/svg"
+                  width="24" height="24" viewBox="0 0 24 24" fill="none">
+                  <path
+                    d="M11.8764 9.42105L14.1818 11.7495V11.6316C14.1818 11.0453 13.9519 10.4831 13.5428 10.0685C13.1336 9.65395 12.5787 9.42105 12 9.42105H11.8764ZM8.74909 10.0105L9.87636 11.1526C9.84 11.3074 9.81818 11.4621 9.81818 11.6316C9.81818 12.2178 10.0481 12.7801 10.4572 13.1947C10.8664 13.6092 11.4213 13.8421 12 13.8421C12.16 13.8421 12.32 13.82 12.4727 13.7832L13.6 14.9253C13.1127 15.1684 12.5745 15.3158 12 15.3158C11.0356 15.3158 10.1107 14.9276 9.4287 14.2367C8.74675 13.5458 8.36364 12.6087 8.36364 11.6316C8.36364 11.0495 8.50909 10.5042 8.74909 10.0105ZM4.72727 5.93579L6.38545 7.61579L6.71273 7.94737C5.51273 8.90526 4.56727 10.1579 4 11.6316C5.25818 14.8663 8.36364 17.1579 12 17.1579C13.1273 17.1579 14.2036 16.9368 15.1855 16.5389L15.4982 16.8484L17.6218 19L18.5455 18.0642L5.65091 5M12 7.94737C12.9644 7.94737 13.8893 8.33553 14.5713 9.02645C15.2532 9.71737 15.6364 10.6545 15.6364 11.6316C15.6364 12.1032 15.5418 12.56 15.3745 12.9726L17.5055 15.1316C18.5964 14.2105 19.4691 13.0021 20 11.6316C18.7418 8.39684 15.6364 6.10526 12 6.10526C10.9818 6.10526 10.0073 6.28947 9.09091 6.62105L10.6691 8.20526C11.0836 8.04316 11.5273 7.94737 12 7.94737Z"
+                    fill="#415467" />
+                </svg></span>
+            </div> -->
+            <password-input class="input-box-stack"></password-input>
+
+            <a href="#">Forgot Password?</a>
+          </div>
+          <button type="submit" disabled id="signin">Login</button>
+          <div style="display: flex; align-items: center; margin: 16px 0;">
+            <hr style="flex: 1; border: none; border-top: 1px solid #D2D9E1;">
+            <span style="margin: 0 12px; color: var(--Text-Secondary); white-space: nowrap;">OR</span>
+            <hr style="flex: 1; border: none; border-top: 1px solid #D2D9E1;">
+          </div>
+          <button id="ContinueWithGoogle" class="google-button">
+           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+  <path d="M22.0406 12.1923C22.0406 11.3495 21.9722 10.7345 21.8242 10.0967H12.2002V13.9007H17.8492C17.7354 14.846 17.1204 16.2697 15.7536 17.2263L15.7345 17.3537L18.7774 19.711L18.9882 19.732C20.9244 17.9439 22.0406 15.313 22.0406 12.1923Z" fill="#4285F4"/>
+  <path d="M12.201 22.215C14.9685 22.215 17.2919 21.3038 18.989 19.7322L15.7544 17.2264C14.8888 17.8301 13.7271 18.2515 12.201 18.2515C9.49034 18.2515 7.18972 16.4634 6.36961 13.9919L6.2494 14.0022L3.08532 16.4509L3.04395 16.5659C4.72955 19.9143 8.19191 22.215 12.201 22.215Z" fill="#34A853"/>
+  <path d="M6.3692 13.992C6.15281 13.3542 6.02758 12.6708 6.02758 11.9647C6.02758 11.2585 6.15281 10.5751 6.35782 9.93735L6.35209 9.80152L3.14836 7.31348L3.04354 7.36333C2.34883 8.75285 1.9502 10.3132 1.9502 11.9647C1.9502 13.6161 2.34883 15.1764 3.04354 16.5659L6.3692 13.992Z" fill="#FBBC05"/>
+  <path d="M12.201 5.67757C14.1257 5.67757 15.4241 6.50898 16.1644 7.20378L19.0573 4.37921C17.2806 2.72776 14.9685 1.71411 12.201 1.71411C8.19191 1.71411 4.72955 4.01473 3.04395 7.36317L6.35822 9.93719C7.18972 7.46571 9.49034 5.67757 12.201 5.67757Z" fill="#EB4335"/>
+</svg>
+            Continue with Google
+          </button>
+        </form>
+        <form id="signupForm" hidden>
+          <h2>Create Your Account</h2>
+
+          <div class="user-box">
+            <input type="text" id="fullName" name="FullName" required>
+            <label>Full Name</label>
+          </div>
+          <div class="user-box">
+            <input type="email" id="signupEmail" name="Email" required>
+            <label>Email</label>
+          </div>
+          <div class="user-box">
+            <input type="tel" id="phoneNumber" name="PhoneNumber" required>
+            <label>Phone Number</label>
+          </div>
+          <div class="user-box">
+            <input type="password" id="signupPassword" name="Password" required>
+            <span class="toggle-password" onclick="togglePassword()"><svg xmlns="http://www.w3.org/2000/svg" width="24"
+                height="24" viewBox="0 0 24 24" fill="none">
+                <path
+                  d="M11.8764 9.42105L14.1818 11.7495V11.6316C14.1818 11.0453 13.9519 10.4831 13.5428 10.0685C13.1336 9.65395 12.5787 9.42105 12 9.42105H11.8764ZM8.74909 10.0105L9.87636 11.1526C9.84 11.3074 9.81818 11.4621 9.81818 11.6316C9.81818 12.2178 10.0481 12.7801 10.4572 13.1947C10.8664 13.6092 11.4213 13.8421 12 13.8421C12.16 13.8421 12.32 13.82 12.4727 13.7832L13.6 14.9253C13.1127 15.1684 12.5745 15.3158 12 15.3158C11.0356 15.3158 10.1107 14.9276 9.4287 14.2367C8.74675 13.5458 8.36364 12.6087 8.36364 11.6316C8.36364 11.0495 8.50909 10.5042 8.74909 10.0105ZM4.72727 5.93579L6.38545 7.61579L6.71273 7.94737C5.51273 8.90526 4.56727 10.1579 4 11.6316C5.25818 14.8663 8.36364 17.1579 12 17.1579C13.1273 17.1579 14.2036 16.9368 15.1855 16.5389L15.4982 16.8484L17.6218 19L18.5455 18.0642L5.65091 5M12 7.94737C12.9644 7.94737 13.8893 8.33553 14.5713 9.02645C15.2532 9.71737 15.6364 10.6545 15.6364 11.6316C15.6364 12.1032 15.5418 12.56 15.3745 12.9726L17.5055 15.1316C18.5964 14.2105 19.4691 13.0021 20 11.6316C18.7418 8.39684 15.6364 6.10526 12 6.10526C10.9818 6.10526 10.0073 6.28947 9.09091 6.62105L10.6691 8.20526C11.0836 8.04316 11.5273 7.94737 12 7.94737Z"
+                  fill="#415467" />
+              </svg></span>
+            <label>Password</label>
+          </div>
+          <button type="submit" disabled id="signupSubmit">Create Account</button>
+        </form>
+      </div>
+    </div>
+  </div>
+  <div id="footer-placeholder"></div>
+  <script type="module" src="./javascript/login.js"></script>
+  <script src="https://akshr.in/javascript/footer.js"></script>
+  <script src="https://akshr.in/javascript/function_library.js"></script>
+  <script>
+    function togglePassword() {
+      const input = document.getElementById("password");
+      input.type = input.type === "password" ? "text" : "password";
+      const inputSignup = document.getElementById("signupPassword");
+      inputSignup.type = inputSignup.type === "password" ? "text" : "password";
+    }
+
+    // document.getElementById('toggleForm').addEventListener('click', function () {
+    //   const loginForm = document.getElementById('loginForm');
+    //   const signupForm = document.getElementById('signupForm');
+    //   const toggleText = loginForm.hidden ? 'Don\'t Have an Account?' : 'Already Have an Account?';
+
+    //   loginForm.hidden = !loginForm.hidden;
+    //   signupForm.hidden = !signupForm.hidden;
+    //   this.innerHTML = toggleText;
+    // });
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,111 @@
+body {
+    font-family: Syne;
+
+}
+
+table {
+    width: 95%;
+    border-collapse: collapse;
+    background: #fff;
+    border-radius: 10px;
+    margin: auto;
+    overflow: hidden;
+    border: 1px solid var(--Neutral-300, #D2D9E1);
+
+
+}
+
+thead {
+    background: var(--Neutral-50, #F7F8FB);
+    border-top-left-radius: 3vh;
+
+
+}
+table td:nth-child(1) {
+      border-left: 2px solid #e5e7eb;
+  }
+  table td:last-child {
+      border-right: 2px solid #e5e7eb;
+  }
+    table tr:last-child {
+      border-bottom: 2px solid #e5e7eb;
+  }
+th,
+td {
+    padding: 16px 20px;
+    text-align: left;
+}
+
+thead tr {
+    border-top-left-radius: 5vh;
+    padding-left: 2vh;
+
+
+
+}
+
+th {
+    color: var(--Neutral-950, #121A21);
+    font-feature-settings: 'dlig' on;
+    font-family: Syne;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 21px;
+    ;
+}
+
+td {
+    color: var(--Text-Secondary, #415467);
+    font-variant-numeric: lining-nums proportional-nums;
+    font-feature-settings: 'dlig' on;
+    font-family: Syne;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px;
+    /* 142.857% */
+}
+
+td a {
+    color: var(--Neutral-950, #121A21);
+    font-variant-numeric: lining-nums tabular-nums;
+    font-feature-settings: 'dlig' on;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    text-decoration-line: underline;
+    text-decoration-style: solid;
+    text-decoration-skip-ink: none;
+    text-decoration-thickness: auto;
+    text-underline-offset: auto;
+    text-underline-position: from-font;
+}
+
+.status-success {
+    color: #16a34a;
+    background-color: #d1fae5;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-weight: 500;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.status-success::before {
+    content: '';
+    width: 8px;
+    height: 8px;
+    background: #16a34a;
+    border-radius: 50%;
+}
+
+.icon {
+    width: 16px;
+    height: 16px;
+    display: inline-block;
+    text-align: center;
+}
+
+.tick-row {
+    background-color: #f8f9fb;
+}
